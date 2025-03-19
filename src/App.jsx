@@ -3,7 +3,7 @@ import "./App.css";
 import Search from "./components/Search";
 import Spinner from "./components/Spinner";
 import MovieCard from "./components/MovieCard";
-import { useDebounce } from 'react-use';
+import { useDebounce } from "react-use";
 
 const API_BASE_URL = "https://api.themoviedb.org/3";
 
@@ -22,9 +22,9 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [movieList, setMovieList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState('')
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm])
+  useDebounce(() => setDebouncedSearchTerm(searchTerm), 500, [searchTerm]);
 
   const fetchMovies = async (query) => {
     setIsLoading(true);
@@ -71,14 +71,14 @@ const App = () => {
         <header>
           <img src="./hero.png" alt="Hero Banner" />
           <h1>
-            Find <span className="text-gradient">Movies </span> You'll enjoy
-            Without the Hassle
+            Encontre <span className="text-gradient">Filmes </span>
+            que você vai gostar sem complicações
           </h1>
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
 
         <section className="all-movies">
-          <h2 className="mt-[40px]">All Movies</h2>
+          <h2 className="mt-[40px]">Todos os Filmes</h2>
 
           {isLoading ? (
             <Spinner />
